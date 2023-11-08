@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
 import profilePhoto from '../assets/your-photo.jpg'; 
 import projectImage1 from '../assets/Project1.webp'; 
 import projectImage2 from '../assets/project2.png'; 
@@ -20,11 +19,16 @@ const Home = ({ projectsRef }) => {
             <AnimatedParagraph>Previously worked with technologies like Python, SQL, Power BI, and Tableau, as well as software tools like React and Node.js.</AnimatedParagraph>
           </div>
         </HomeSection>
-  
+
         <ProjectsSection ref={projectsRef}>
           <h3>My Projects</h3>
           <div className="projects-overview">
-            <Link to="/project1">
+            {/* Project 1 */}
+            <a
+              href="https://github.com/Alankrutha18/cardivascular_disease_risk_predictionn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ProjectCard>
                 <img src={projectImage1} alt="Cardiovascular Disease Prediction" />
                 <div className="project-info">
@@ -32,8 +36,14 @@ const Home = ({ projectsRef }) => {
                   <p>Using machine learning to predict cardiovascular risk.</p>
                 </div>
               </ProjectCard>
-            </Link>
-            <Link to="/project2">
+            </a>
+
+            {/* Project 2 */}
+            <a
+              href="https://github.com/Alankrutha18/Transfer_learning-for_Image_Clasification"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ProjectCard>
                 <img src={projectImage2} alt="Image Classification" />
                 <div className="project-info">
@@ -41,8 +51,14 @@ const Home = ({ projectsRef }) => {
                   <p>Model to classify images with 90% accuracy.</p>
                 </div>
               </ProjectCard>
-            </Link>
-            <Link to="/project3">
+            </a>
+
+            {/* Project 3 */}
+            <a
+              href="https://github.com/Alankrutha18/financial-risk-modelling"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <ProjectCard>
                 <img src={projectImage3} alt="Financial Risk Modelling" />
                 <div className="project-info">
@@ -50,7 +66,7 @@ const Home = ({ projectsRef }) => {
                   <p>Predictive modeling for assessing financial risks.</p>
                 </div>
               </ProjectCard>
-            </Link>
+            </a>
           </div>
         </ProjectsSection>
       </>
@@ -58,7 +74,6 @@ const Home = ({ projectsRef }) => {
 };
 
 // Styled Components
-
 const HomeSection = styled.section`
   display: flex;
   padding: 100px 20px;
@@ -116,7 +131,6 @@ const HomeSection = styled.section`
   }
 `;
 
-// Add font-family and animations to Heading
 const AnimatedHeading = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 3rem;
@@ -146,7 +160,6 @@ const AnimatedHeading = styled.h1`
   }
 `;
 
-// Animate paragraphs for smooth appearance
 const AnimatedParagraph = styled.p`
   font-family: 'Poppins', sans-serif;
   color: #333;
