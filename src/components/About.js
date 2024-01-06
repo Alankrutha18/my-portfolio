@@ -14,16 +14,16 @@ const About = () => {
         <div className="info">
           <AnimatedHeading>About Me</AnimatedHeading>
           <AnimatedParagraph>
-            👋🏽 Hi, I’m Alankrutha Reddy Purumandla, a Data Analyst originally from India. I moved to the U.S. two years ago to pursue my Master’s at Northeastern University in Boston.
+            👋🏽 Hi, I’m Alankrutha Reddy Purumandla, a professional with expertise in both Data Analytics and Software Engineering. Originally from India, I moved to the U.S. to pursue my Master’s at Northeastern University in Boston.
           </AnimatedParagraph>
           <AnimatedParagraph>
-            📊 I’m passionate about using data to drive meaningful insights and improve decision-making. Through internships and personal projects, I’ve been honing my skills and tackling real-world challenges.
+          📊 I’m passionate about leveraging data and technology to solve complex problems and create impactful solutions. From analyzing datasets to uncover actionable insights to building robust applications, I enjoy tackling challenges that blend creativity and technical skills.
           </AnimatedParagraph>
           <AnimatedParagraph>
-            💃🏽 When I’m not analyzing data, you can find me dancing classical styles or playing volleyball.
+            💃🏽 When I’m not immensed in code or data, you can find me dancing classical styles or playing volleyball.
           </AnimatedParagraph>
           <AnimatedParagraph>
-            ✨ I love blending my creative side with analytics and always enjoy a good challenge—whether on the court or in front of my computer!
+          ✨ I thrive on combining innovation and precision, whether I’m designing scalable applications, analyzing intricate datasets, or taking on a friendly competition on the court.
           </AnimatedParagraph>
           <AnimatedParagraph>
             🍳 Cooking is one of my greatest passions! I love experimenting with flavors and exploring different cuisines, whether it’s whipping up a comforting Indian curry or trying out new recipes from around the world.
@@ -36,7 +36,7 @@ const About = () => {
 
       {/* Fun Fact Section Below the Image */}
       <FunFactSection>
-        <AnimatedHeading>Fun Fact: My Cooking Skills Are Almost as Sharp as My Data Analysis!</AnimatedHeading>
+        <AnimatedHeading>Fun Fact: My Cooking Skills Are as thoughtfully crafted as the Code I Write!</AnimatedHeading>
       </FunFactSection>
 
       {/* Cooking Photos Section */}
@@ -148,8 +148,10 @@ const FunFactSection = styled.div`
 
   h2 {
     color: #6A0DAD;
+    font-size: 1.8rem; /* Adjust this value for the desired size */
   }
 `;
+
 
 const CookingPhotos = styled.div`
   display: grid;

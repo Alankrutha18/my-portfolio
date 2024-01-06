@@ -16,8 +16,8 @@ const Home = ({ projectsRef }) => {
           </div>
           <div className="right">
             <AnimatedHeading>Hey, this is Alankrutha Purumandla!</AnimatedHeading>
-            <AnimatedParagraph>A Data Analyst passionate about using data to drive business growth and improve decision-making processes.</AnimatedParagraph>
-            <AnimatedParagraph>Previously worked with data analytics tools like Python, SQL, Power BI, and Tableau.</AnimatedParagraph>
+            <AnimatedParagraph>A professional passionate about crafting robust software solutions and leveraging data to drive impactful decisions.</AnimatedParagraph>
+            <AnimatedParagraph>Previously worked with technologies like Python, SQL, Power BI, and Tableau, as well as software tools like React and Node.js.</AnimatedParagraph>
           </div>
         </HomeSection>
   
