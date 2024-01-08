@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Header from './components/Header';
+import Footer from './components/Footer'; // Import the Footer component
 
 const App = () => {
   const projectsRef = useRef(null); // Create a ref for the projects section
@@ -21,8 +22,8 @@ const App = () => {
         <Route path="/" element={<Home projectsRef={projectsRef} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
       </Routes>
+      <Footer /> {/* Add the Footer here */}
     </Router>
   );
 };
