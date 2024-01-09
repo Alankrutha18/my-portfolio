@@ -1,42 +1,59 @@
 import React from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
 import styled from 'styled-components';
 
 const Projects = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
     <ProjectsSection>
       <h2>Projects</h2>
       <ProjectList>
-        <ProjectCard>
-          <h3>Cardiovascular Disease Prediction</h3>
-          <p>Using machine learning to predict cardiovascular risk based on patient data.</p>
-          <a 
-            href="https://github.com/Alankrutha18/cardivascular_disease_risk_predictionn" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn btn-primary"
-          >
-            View on GitHub
-          </a>
-        </ProjectCard>
-        <ProjectCard>
-          <h3>Transfer Learning for Image Classification</h3>
-          <p>Developed a model using transfer learning to classify images with 90% accuracy.</p>
-          <a 
-            href="https://github.com/Alankrutha18/Transfer_learning-for_Image_Clasification" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            // className="btn btn-primary"
-          >
-            View on GitHub
-          </a>
-          
-        </ProjectCard>
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0 }}
+        >
+          <ProjectCard>
+            <h3>Cardiovascular Disease Prediction</h3>
+            <p>Using machine learning to predict cardiovascular risk based on patient data.</p>
+            <a
+              href="https://github.com/Alankrutha18/cardivascular_disease_risk_predictionn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
+          </ProjectCard>
+        </motion.div>
+        <motion.div
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <ProjectCard>
+            <h3>Transfer Learning for Image Classification</h3>
+            <p>Developed a model using transfer learning to classify images with 90% accuracy.</p>
+            <a
+              href="https://github.com/Alankrutha18/Transfer_learning-for_Image_Clasification"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on GitHub
+            </a>
+          </ProjectCard>
+        </motion.div>
       </ProjectList>
     </ProjectsSection>
   );
 };
-
-// Styled Components
 
 const ProjectsSection = styled.div`
   padding: 50px;

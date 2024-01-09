@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion'; // Import framer-motion
 import profilePhoto from '../assets/your-photo.jpg'; 
 import projectImage1 from '../assets/Project1.webp'; 
 import projectImage2 from '../assets/project2.png'; 
@@ -7,70 +8,77 @@ import styled from 'styled-components';
 import '@fontsource/poppins'; // Import the font
 
 const Home = ({ projectsRef }) => {
-    return (
-      <>
-        <HomeSection>
-          <div className="left">
-            <img src={profilePhoto} alt="Your Profile" className="profile-photo" />
-          </div>
-          <div className="right">
-            <AnimatedHeading>Hey, this is Alankrutha Purumandla!</AnimatedHeading>
-            <AnimatedParagraph>A professional passionate about crafting robust software solutions and leveraging data to drive impactful decisions.</AnimatedParagraph>
-            <AnimatedParagraph>Previously worked with technologies like Python, SQL, Power BI, and Tableau, as well as software tools like React and Node.js.</AnimatedParagraph>
-          </div>
-        </HomeSection>
+  return (
+    <>
+      <HomeSection
+        as={motion.div}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="left">
+          <img src={profilePhoto} alt="Your Profile" className="profile-photo" />
+        </div>
+        <div className="right">
+          <AnimatedHeading>Hey, this is Alankrutha Purumandla!</AnimatedHeading>
+          <AnimatedParagraph>A professional passionate about crafting robust software solutions and leveraging data to drive impactful decisions.</AnimatedParagraph>
+          <AnimatedParagraph>Previously worked with technologies like Python, SQL, Power BI, and Tableau, as well as software tools like React and Node.js.</AnimatedParagraph>
+        </div>
+      </HomeSection>
 
-        <ProjectsSection ref={projectsRef}>
-          <h3>My Projects</h3>
-          <div className="projects-overview">
-            {/* Project 1 */}
-            <a
-              href="https://github.com/Alankrutha18/cardivascular_disease_risk_predictionn"
+      <ProjectsSection ref={projectsRef}>
+        <motion.h3
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          My Projects
+        </motion.h3>
+        <div className="projects-overview">
+          {[ // Project cards
+            {
+              title: 'Cardiovascular Disease Prediction',
+              description: 'Using machine learning to predict cardiovascular risk.',
+              image: projectImage1,
+              link: 'https://github.com/Alankrutha18/cardivascular_disease_risk_predictionn'
+            },
+            {
+              title: 'Transfer Learning for Image Classification',
+              description: 'Model to classify images with 90% accuracy.',
+              image: projectImage2,
+              link: 'https://github.com/Alankrutha18/Transfer_learning-for_Image_Clasification'
+            },
+            {
+              title: 'Financial Risk Modelling',
+              description: 'Predictive modeling for assessing financial risks.',
+              image: projectImage3,
+              link: 'https://github.com/Alankrutha18/financial-risk-modelling'
+            }
+          ].map((project, index) => (
+            <motion.a
+              key={index}
+              href={project.link}
               target="_blank"
               rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
               <ProjectCard>
-                <img src={projectImage1} alt="Cardiovascular Disease Prediction" />
+                <img src={project.image} alt={project.title} />
                 <div className="project-info">
-                  <h4>Cardiovascular Disease Prediction</h4>
-                  <p>Using machine learning to predict cardiovascular risk.</p>
+                  <h4>{project.title}</h4>
+                  <p>{project.description}</p>
                 </div>
               </ProjectCard>
-            </a>
-
-            {/* Project 2 */}
-            <a
-              href="https://github.com/Alankrutha18/Transfer_learning-for_Image_Clasification"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ProjectCard>
-                <img src={projectImage2} alt="Image Classification" />
-                <div className="project-info">
-                  <h4>Transfer Learning for Image Classification</h4>
-                  <p>Model to classify images with 90% accuracy.</p>
-                </div>
-              </ProjectCard>
-            </a>
-
-            {/* Project 3 */}
-            <a
-              href="https://github.com/Alankrutha18/financial-risk-modelling"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ProjectCard>
-                <img src={projectImage3} alt="Financial Risk Modelling" />
-                <div className="project-info">
-                  <h4>Financial Risk Modelling</h4>
-                  <p>Predictive modeling for assessing financial risks.</p>
-                </div>
-              </ProjectCard>
-            </a>
-          </div>
-        </ProjectsSection>
-      </>
-    );
+            </motion.a>
+          ))}
+        </div>
+      </ProjectsSection>
+    </>
+  );
 };
 
 // Styled Components
@@ -135,57 +143,11 @@ const AnimatedHeading = styled.h1`
   font-family: 'Poppins', sans-serif;
   font-size: 3rem;
   color: #6A0DAD;
-  margin-top: 0;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.5s ease-out forwards;
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 2rem;
-  }
 `;
 
 const AnimatedParagraph = styled.p`
   font-family: 'Poppins', sans-serif;
   color: #333;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.5s;
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1rem;
-  }
 `;
 
 const ProjectsSection = styled.section`
