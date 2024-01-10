@@ -4,6 +4,9 @@ import profilePhoto from '../assets/your-photo.jpg';
 import projectImage1 from '../assets/Project1.webp'; 
 import projectImage2 from '../assets/project2.png'; 
 import projectImage3 from '../assets/project3.jpg'; 
+import projectImage4 from '../assets/project4.png';
+import projectImage5 from '../assets/project5.webp';
+
 import styled from 'styled-components';
 import '@fontsource/poppins'; // Import the font
 
@@ -54,6 +57,18 @@ const Home = ({ projectsRef }) => {
               description: 'Predictive modeling for assessing financial risks.',
               image: projectImage3,
               link: 'https://github.com/Alankrutha18/financial-risk-modelling'
+            },
+            {
+              title: 'Sentiment Analysis',
+              description: 'Using NLP to analyze customer sentiments.',
+              image: projectImage4, // Replace with your actual image path
+              link: 'https://github.com/Alankrutha18/sentiment-analysis',
+            },
+            {
+              title: 'E-Commerce Dashboard',
+              description: 'Interactive dashboard for sales insights.',
+              image: projectImage5, // Replace with your actual image path
+              link: 'https://github.com/Alankrutha18/ecommerce-dashboard',
             }
           ].map((project, index) => (
             <motion.a
