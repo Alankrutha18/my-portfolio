@@ -27,7 +27,7 @@ const Header = ({ onScrollToProjects }) => {
         <li><Link to="/about">About</Link></li>
         {/* Use handleProjectsClick to navigate and scroll */}
         <li><a onClick={handleProjectsClick} style={{ cursor: 'pointer', color: '#6A0DAD' }}>Projects</a></li>
-        <li><a href="/Alankrutha_Purumandla_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
+        <li><a href="/RESUME_ALANKRUTHAPURUMANDLA.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
         <li><Link to="/contact">Contact</Link></li>
       </ul>
     </Nav>

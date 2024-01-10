@@ -5,7 +5,7 @@ const Resume = () => {
     <section id="resume">
       <h2>Resume</h2>
       <p>You can download my resume by clicking the link below:</p>
-      <a href="/path-to-your-resume.pdf" download="Alankrutha_Purumandla_Resume.pdf">
+      <a href="/path-to-your-resume.pdf" download="RESUME_ALANKRUTHAPURUMANDLA.pdf">
         Download Resume
       </a>
 
