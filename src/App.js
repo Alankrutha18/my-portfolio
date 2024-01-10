@@ -5,6 +5,8 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer'; // Import the Footer component
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   const projectsRef = useRef(null); // Create a ref for the projects section
